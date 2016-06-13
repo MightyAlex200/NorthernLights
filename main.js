@@ -3,6 +3,7 @@ function AddWindow(inp){
   amount_of_windows += 1;
   $('<div>',{
       id: amount_of_windows + '_div',
+      width: "400px"
     }
   ).appendTo('body');
   $('#' + amount_of_windows + '_div').draggable();
