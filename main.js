@@ -6,11 +6,36 @@ function AddWindow(inp){
       width: "400px"
     }
   ).appendTo('body');
-  $('#' + amount_of_windows + '_div').draggable();
-  $('<img>', {
+  div = $('#' + amount_of_windows + '_div')
+  div.draggable();
+  plusButton = $('<button>',{
+    html: '+'
+  });
+  plusButton.appendTo(div);
+  minusButton = $('<button>',{
+    html: '-'
+  });
+  minusButton.appendTo(div);
+
+  plusButton.click(function(){
+    ns = parseInt(div[0].style.width) + 50 + "px";
+    div[0].style.width = ns;
+    img[0].style.width = ns;
+  });
+
+  minusButton.click(function(){
+    ns = parseInt(div[0].style.width) - 50 + "px";
+    div[0].style.width = ns;
+    img[0].style.width = ns;
+  });
+
+
+
+  img = $('<img>', {
    src: document.getElementById(inp).value,
    id:  amount_of_windows,
    width: "400px",
    frameborder: 0
- }).appendTo('#' + amount_of_windows + '_div');
+ });
+ img.appendTo(div);
 }
